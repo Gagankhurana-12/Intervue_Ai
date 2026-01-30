@@ -1,0 +1,163 @@
+.control-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mode-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mode-selector label {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.mode-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.mode-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.mode-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.mode-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.mode-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.main-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  min-width: 100px;
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.record-btn {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.record-btn.recording {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  animation: pulse-red 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(244, 67, 54, 0);
+  }
+}
+
+.mute-btn {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mute-btn.muted {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+.mute-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mute-btn.muted:hover {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  opacity: 0.9;
+}
+
+.stop-btn {
+  background: linear-gradient(135deg, #FF9800, #F57C00);
+}
+
+.stop-btn:hover {
+  background: linear-gradient(135deg, #F57C00, #E65100);
+}
+
+.end-btn {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+.end-btn:hover {
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+}
+
+@media (max-width: 768px) {
+  .control-panel {
+    padding: 1rem;
+  }
+
+  .main-controls {
+    gap: 0.5rem;
+  }
+
+  .control-btn {
+    min-width: 80px;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .mode-buttons {
+    width: 100%;
+  }
+
+  .mode-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
